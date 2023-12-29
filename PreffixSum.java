@@ -1,9 +1,36 @@
+import java.util.Scanner;
+
 public class PreffixSum {
   public static void main(String[] args) {
     int nums[] = { 1, 2, 3, 4, 5 };
     // int ans[] = preffixSum(nums);
-    int ans[] = suffixSum(nums);
-      printArray(ans);
+    // int ans[] = suffixSum(nums);
+    // printArray(ans);
+    rangeQuerySum(nums);
+
+  }
+  
+  static void rangeQuerySum(int nums[]) {
+     Scanner sc= new Scanner(System.in);
+      System.out.print("Enter the value of Q:");
+      int q = sc.nextInt();
+      int prefix[] = preffixSum(nums);
+      
+      while (q-- > 0) {
+        System.out.print("enter the value of L:");
+        int l = sc.nextInt();
+        System.out.print("enter the value of R:");
+        int r = sc.nextInt();
+        
+        if (r > nums.length || l>nums.length) {
+          System.out.println("Invalid input Out of range !!");
+          return;
+        }
+        int ans = prefix[r] - prefix[l - 1];
+        System.out.print("Sum of Range is " + ans);
+        System.out.println();
+        
+      }
 
   }
 
