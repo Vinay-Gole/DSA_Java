@@ -1,12 +1,15 @@
-class ArrayRotate.java{
-  public static void main(String [] args){
- int nums[] = { 1, 2, 3, 4, 5, 6, 7 };
-    rotateArrayByk(nums, 5);
+/**
+ * ArrayRotate
+ */
+public class ArrayRotate {
+
+  public static void main(String[] args) {
+    int nums[] = { 1, 2, 3, 4, 5, 6 };
+    int k = 3;
+    rotateArrayByk(nums, k);
     printArray(nums);
   }
-  
-
-  
+   
   static void printArray(int arr[]){
     int n=arr.length;
     for(int i=0;i<n;i++){
@@ -31,6 +34,5 @@ class ArrayRotate.java{
     reverse(arr, k, end);
     reverse(arr, 0, end);
   }
-  
 }
 
