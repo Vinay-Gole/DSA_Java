@@ -20,17 +20,19 @@ public class LinearSearch {
     // System.out.println("Char is Present in String:" + searchInString(str, ch));
     // System.out.println("Array Index is :" + linearsearch(arr, target));
 
-    // int arr[][] = {
-    // { 2, 4, 5, 7 }, { 400, 2, 5, 7, 8 }, { 90, 6, 3 }
-    // };
+    int arr[][] = {
+    { 2, 4, 5, 7 }, { 400, 2, 5, 7, 8 }, { 90, 6, 3 }
+    };
+System.out.println(maximumWealth(arr));
 
     // System.out.println("MAX :"+maxIn2dArray(arr));
     // int target = 6;
     // int ans[] = searchIn2DArray(arr, target);
     // System.out.println(Arrays.toString(ans));
 
-    int[] nums = { 12, 345, 2, 6, 7896 };// even count
-    System.out.println(findNumbers(nums));
+    // int[] nums = { 12, 345, 2, 6, 7896 };// even count
+    // System.out.println(findNumbers(nums));
+    // System.out.println(digit2(-5423));
   }
 
   // -------------------------------------------------------------------------------
@@ -133,6 +135,18 @@ public class LinearSearch {
   }
 
   // -------------------------------------------------------------------------------
+  static int digit2(int num) {
+    if (num < 0) {
+      num = num * -1;
+
+    }
+    if (num == 0) {
+      return 1;
+    }
+    return (int) (Math.log10(num)) + 1;
+  }
+
+  // -------------------------------------------------------------------------------
   static boolean even(int num) {
 
     int numofDigits = digit(num);
@@ -150,5 +164,25 @@ public class LinearSearch {
     }
     return count;
   }
+
+  // -------------------------------------------------------------------------------
+
+  static int maximumWealth(int accounts[][]) {
+    int ans = Integer.MIN_VALUE;
+
+    for (int[] Ints : accounts) {
+      int sum = 0;
+      for (int anInts : Ints) {
+        sum = sum + anInts;
+
+      }
+
+      if (ans < sum) {
+        ans = sum;
+      }
+    }
+    return ans;
+  }
+  // -------------------------------------------------------------------------------
 
 }
