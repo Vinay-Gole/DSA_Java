@@ -4,8 +4,9 @@ import java.util.Arrays;
 
 public class BubbleSort {
   public static void main(String[] args) {
-    int nums[] = { 8, 5, 3, 1, 3, 4 };
+    int nums[] = { 86, 5, 3, 164, 3, 4 ,84};
     bubbleSort(nums);
+    System.out.println("Sorted Array is:");
     System.out.println(Arrays.toString(nums));
 
   }
